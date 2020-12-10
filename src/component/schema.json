@@ -1,0 +1,17 @@
+{
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "x-prompt": "What is the component name (capitalized please, without 'Component'; eg: ListUsers)?"
+    },
+    "module": {
+      "type": "string",
+      "minLength": 1,
+      "x-prompt": "What is the module name (capitalized please; eg: MyModule)?"
+    },
+    "useColor": {
+      "type": "boolean"
+    }
+  }
+}

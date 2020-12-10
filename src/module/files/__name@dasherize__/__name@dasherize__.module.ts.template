@@ -1,0 +1,35 @@
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+
+// modules
+import { <%= classify(name) %>RoutingModule } from './<%= dasherize(name) %>-routing.module';
+
+// services
+import * as fromHttpServices from './http';
+import * as fromServices from './services';
+
+// components
+import * as fromComponents from './components';
+
+// containers
+import * as fromContainers from './containers';
+
+// guards
+import * as fromGuards from './guards';
+
+@NgModule({
+  declarations: [
+    ...fromComponents.components,
+    ...fromContainers.containers,
+  ],
+  imports: [
+    CommonModule,
+    <%= classify(name) %>RoutingModule,
+  ],
+  providers: [
+    ...fromGuards.guards,
+    ...fromHttpServices.httpServices,
+    ...fromServices.services,
+  ],
+})
+export class <%= classify(name) %>Module {}

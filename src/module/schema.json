@@ -1,0 +1,12 @@
+{
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "x-prompt": "What is the module name (capitalized please; eg: MyModule)?"
+    },
+    "useColor": {
+      "type": "boolean"
+    }
+  }
+}

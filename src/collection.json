@@ -1,0 +1,20 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "module": {
+      "description": "Create an Angular module",
+      "factory": "./module/index#module",
+      "schema": "./module/schema.json"
+    },
+    "container": {
+      "description": "Create an Angular container",
+      "factory": "./container/index#container",
+      "schema": "./container/schema.json"
+    },
+    "component": {
+      "description": "Create an Angular component",
+      "factory": "./component/index#component",
+      "schema": "./component/schema.json"
+    }
+  }
+}
