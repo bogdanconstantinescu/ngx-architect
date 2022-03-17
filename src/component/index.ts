@@ -15,7 +15,7 @@ import {
 import { InsertChange } from '@schematics/angular/utility/change';
 import * as ts from 'typescript';
 import { setup } from '../setup';
-import { insertExport, insertImport, insertItem } from '../utils';
+import { insertImport, insertItem } from '../utils';
 import { ComponentSchema } from './schema';
 
 export function component(options: ComponentSchema): Rule {
@@ -34,13 +34,13 @@ export function component(options: ComponentSchema): Rule {
     ]);
 
     return chain([
-      branchAndMerge(chain([addImportExport(options)])),
+      branchAndMerge(chain([addImport(options)])),
       mergeWith(templateSource),
     ]);
   };
 }
 
-function addImportExport(options: ComponentSchema): Rule {
+function addImport(options: ComponentSchema): Rule {
   return (tree: Tree) => {
     const thePath = normalize(`/${options.path as string}/${strings.dasherize(options.module)}/components/`);
     const theComponentsBarrelFile = normalize(`${ thePath }/index.ts`);
@@ -66,12 +66,6 @@ function addImportExport(options: ComponentSchema): Rule {
       theRelativePath,
       false
     );
-    const theContainerExport = insertExport(
-      theSource,
-      theComponentsBarrelFile,
-      '*',
-      theRelativePath
-    );
     const theContainerArrayInsert = insertItem(
       theSource,
       theComponentsBarrelFile,
@@ -81,7 +75,6 @@ function addImportExport(options: ComponentSchema): Rule {
     const changes = [
       theContainerImport,
       theContainerArrayInsert,
-      theContainerExport,
     ];
     const recorder = tree.beginUpdate(theComponentsBarrelFile);
     for (const change of changes) {
