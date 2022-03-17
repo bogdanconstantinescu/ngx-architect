@@ -1,28 +1,35 @@
-# Getting Started With Schematics
+# `ngx-architect`
 
-This repository is a basic Schematic implementation that serves as a starting point to create and publish Schematics to NPM.
+This package is a simple and helpful tools for scaffolding modules, containers, and components.
+Most of the util functions are based on the [@ngrx/schematics](https://www.npmjs.com/package/@ngrx/schematics) package.
 
-### Testing
+### Install
 
-To test locally, install `@angular-devkit/schematics-cli` globally and use the `schematics` command line tool. That tool acts the same as the `generate` command of the Angular CLI, but also has a debug mode.
+Add it to your development dependencies:
+- **npm**: `npm install --save-dev ngx-architect`
+- **yarn**: `yarn install --save-dev ngx-architect`
 
-Check the documentation with
-```bash
-schematics --help
-```
+----
 
-### Unit Testing
+### Scaffolding code
 
-`npm run test` will run the unit tests, using Jasmine as a runner and test framework.
+----
 
-### Publishing
+#### Module
 
-To publish, simply do:
+- Interactive: `ng g ngx-architect:module`
+- Non-interactive: `ng g ngx-architect:module --name ModuleName`
 
-```bash
-npm run build
-npm publish
-```
+----
 
-That's it!
- 
+#### Container
+
+- Interactive: `ng g ngx-architect:container`
+- Non-interactive: `ng g ngx-architect:container --name MyContainer --module MyModule`
+
+----
+
+#### Component
+
+- Interactive: `ng g ngx-architect:component`
+- Non-interactive: `ng g ngx-architect:component --name MyComponent --module MyModule`

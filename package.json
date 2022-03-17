@@ -1,6 +1,6 @@
 {
   "name": "ngx-architect",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A schematic that does the job for you",
   "scripts": {
     "build": "tsc -p tsconfig.json",
@@ -10,7 +10,7 @@
     "schematics"
   ],
   "author": "Bogdan Constantinescu <bogdan@bogdanconstantinescu.com> (http://bogdanconstantinescu.com/)",
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "schematics": "./src/collection.json",
   "dependencies": {
     "@angular-devkit/core": "^11.0.3",
