@@ -1,6 +1,6 @@
 # `ngx-architect`
 
-This package is a simple and helpful tools for scaffolding modules, containers, and components.
+This package is a simple and helpful tool for scaffolding modules, containers, and components.
 Most of the util functions are based on the [@ngrx/schematics](https://www.npmjs.com/package/@ngrx/schematics) package.
 
 ### Install

@@ -14,7 +14,8 @@ export function setup(tree: Tree, options: any) {
   const workspace: WorkspaceSchema = JSON.parse(workspaceContent);
 
   if (!options.project) {
-    options.project = workspace.defaultProject;
+    const defaultProject = (workspace as { defaultProject?: string }).defaultProject;
+    options.project = defaultProject ?? Object.keys(workspace.projects)[0];
   }
   const projectName = options.project as string;
   const project = workspace.projects[projectName];
